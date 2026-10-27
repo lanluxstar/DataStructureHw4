@@ -6,42 +6,42 @@ true
 true
 true
 duplicate s3: false
-playlist: [Night Drive, Slow Tide, Copper Sky, Static Bloom, Low Orbit, Glass Rivers]
+playlist: [Starlight, Call of Silence, Illusionary Daytime, Ocean, Star Sky, Lay All Your Love on Me]
 --- 2. Look up songs ---
-find s4: Static Bloom
+find s4: Ocean
 find s9: null
 --- 3. Play and move forward ---
-play s1: Night Drive
+play s1: Starlight
 play s9: null
-next: Slow Tide
-next: Copper Sky
-history: [Slow Tide, Night Drive]
+next: Call of Silence
+next: Illusionary Daytime
+history: [Call of Silence, Starlight]
 --- 4. Up next ---
 true
 true
 true
 queue s9: false
-up next: [Night Drive, Low Orbit, Glass Rivers]
-next: Night Drive
-now playing: Night Drive
-history: [Copper Sky, Slow Tide, Night Drive]
+up next: [Starlight, Star Sky, Lay All Your Love on Me]
+next: Starlight
+now playing: Starlight
+history: [Illusionary Daytime, Call of Silence, Starlight]
 --- 5. Back button ---
-back: Copper Sky
-up next: [Night Drive, Low Orbit, Glass Rivers]
-history: [Slow Tide, Night Drive]
+back: Illusionary Daytime
+up next: [Starlight, Star Sky, Lay All Your Love on Me]
+history: [Call of Silence, Starlight]
 --- 6. Remove songs ---
 remove s5: true
 remove current (s3): false
 remove s9: false
-playlist: [Night Drive, Slow Tide, Copper Sky, Static Bloom, Glass Rivers]
-up next: [Night Drive, Glass Rivers]
+playlist: [Starlight, Call of Silence, Illusionary Daytime, Ocean, Lay All Your Love on Me]
+up next: [Starlight, Lay All Your Love on Me]
 --- 7. Removed songs are skipped ---
-next: Night Drive
-next: Glass Rivers
+next: Starlight
+next: Lay All Your Love on Me
 next at end: null
-now playing: Glass Rivers
-back: Night Drive
-up next: [Glass Rivers]
+now playing: Lay All Your Love on Me
+back: Starlight
+up next: [Lay All Your Love on Me]
 --- 8. Play counts ---
 s1: 4
 s3: 2
@@ -52,3 +52,6 @@ next: null
 back: null
 now playing: null
 playlist: []
+
+Top 3 songs: [Starlight, Illusionary Daytime, Call of Silence]
+Recently played songs: [Illusionary Daytime, Call of Silence, Starlight]

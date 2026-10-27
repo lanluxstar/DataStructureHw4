@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 class Song {
     String id, title, artist;
@@ -167,5 +169,33 @@ public class MusicPlayer {
         library.remove(id);
         playCounts.remove(id);
         return true;
+    }
+    
+    public List<String> recentlyPlayed() {
+        List<String> out = new ArrayList<>();
+        Set<String> seen = new HashSet<>();
+        for (Song s: history) {
+            if (!library.containsKey(s.id)) continue;  
+            if (seen.add(s.id)) out.add(s.title);      
+            if (out.size() == 10) break;                
+        }
+        return out;
+    }
+
+    /** The n most played titles, most played first. Ties broken by playlist order. */
+    public List<String> topSongs(int n) {
+        if (n <= 0) return new ArrayList<>();
+
+        // Build a list of live songs, keeping playlist order so ties are deterministic.
+        List<Song> live = new ArrayList<>();
+        for (Node cur = head; cur != null; cur = cur.next) live.add(cur.song);
+
+        // Sort: play count descending; if counts are equal, playlist order wins.
+        // Java's sort is stable, so the playlist order we built above is preserved on ties.
+        live.sort((a, b) -> playCount(b.id) - playCount(a.id));
+
+        List<String> out = new ArrayList<>();
+        for (int i = 0; i < live.size() && i < n; i++) out.add(live.get(i).title);
+        return out;
     }
 }

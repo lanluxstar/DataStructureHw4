@@ -16,12 +16,12 @@ public class SongPlayer {
 
         
         System.out.println("--- 1. Build the playlist ---");
-        System.out.println(p.addSong("s1", "Night Drive", "A"));
-        System.out.println(p.addSong("s2", "Slow Tide", "B"));
-        System.out.println(p.addSong("s3", "Copper Sky", "C"));
-        System.out.println(p.addSong("s4", "Static Bloom", "D"));
-        System.out.println(p.addSong("s5", "Low Orbit", "E"));
-        System.out.println(p.addSong("s6", "Glass Rivers", "F"));
+        System.out.println(p.addSong("s1", "Starlight", "A"));
+        System.out.println(p.addSong("s2", "Call of Silence", "B"));
+        System.out.println(p.addSong("s3", "Illusionary Daytime", "C"));
+        System.out.println(p.addSong("s4", "Ocean", "D"));
+        System.out.println(p.addSong("s5", "Star Sky", "E"));
+        System.out.println(p.addSong("s6", "Lay All Your Love on Me", "F"));
         System.out.println("duplicate s3: " + p.addSong("s3", "Dup", "X"));
         System.out.println("playlist: " + p.showPlaylist());
 
@@ -86,6 +86,11 @@ public class SongPlayer {
         System.out.println("back: " + empty.back());
         System.out.println("now playing: " + empty.nowPlaying());
         System.out.println("playlist: " + empty.showPlaylist());
+        
+        System.out.println();
+        System.out.println("Top 3 songs: " + p.topSongs(3));
+        System.out.println("Recently played songs: " + p.recentlyPlayed());
+        
         
         System.setOut(console);
         file.flush();
